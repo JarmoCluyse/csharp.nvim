@@ -18,7 +18,7 @@ local function apply_launch_profile(debug_config, launch_profile)
 
   if launch_profile.commandLineArgs then
     local args = vim.split(launch_profile.commandLineArgs, " ", { trimempty = true })
-    for _, arg in args do
+    for _, arg in ipairs(args) do
       table.insert(debug_config.args, arg)
     end
   end
